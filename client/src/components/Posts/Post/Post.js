@@ -6,9 +6,10 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 
 import useStyles from './style';
+import { useDispatch } from 'react-redux';
 
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
 	const classes = useStyles();
 	return(
 		<Card className={classes.card}>
@@ -19,9 +20,9 @@ const Post = ({ post }) => {
 			</div>
             <div className={classes.overlay2}>
 				<Button 
-					style={{ color: 'lightgrey'}} 
+					style={{ color: 'white'}} 
 					size="small" 
-					onClick={() => {}}>
+					onClick={() => setCurrentId(post._id)}>
 					<MoreHorizIcon fontSize="medium" />
 				</Button>
 			</div>
