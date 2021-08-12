@@ -13,8 +13,8 @@ export default makeStyles(() => ({
         padding: '12px'
 	      },
 	      heading: {
-        color: '#2E684C',
-        fontWeight: '30'
+        color: '#173426',
+        fontWeight: '10'
 	      },
 	      image: {
         marginLeft: '20px',
