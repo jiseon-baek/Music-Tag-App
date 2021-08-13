@@ -32,6 +32,8 @@ const Form = ({ currentId, setCurrentId }) => {
 	}
 
 	const clear = () => {
+		setCurrentId(null);
+		setPostData({creator: '', title: '', message: '', tags: '', selectedFile: ''});
 	}
 	
 	return(
@@ -43,8 +45,8 @@ const Form = ({ currentId, setCurrentId }) => {
 			<TextField name="message" variant="outlined" label="Comment" fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
 			<TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}/>
 			<div className={classes.fileInput}><FireBase type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData, selectedFile: base64 })}/></div>
-			<Button className={classes.buttonSubmit} variant="contained" color="" size="large" type="submit" fullWidth>Submit</Button>
-			<Button variant="contained" color="" size="small" onClick={clear} fullWidth>Clear</Button>
+			<Button className={classes.buttonSubmit} variant="contained" color="default" size="large" type="submit" fullWidth>Submit</Button>
+			<Button variant="contained" color="default" size="small" onClick={clear} fullWidth>Clear</Button>
 			</form>
 		</Paper>
 	);

@@ -6,11 +6,11 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 
 import useStyles from './style';
-import { useDispatch } from 'react-redux';
 
 
 const Post = ({ post, setCurrentId }) => {
 	const classes = useStyles();
+	
 	return(
 		<Card className={classes.card}>
 			<CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
@@ -19,7 +19,7 @@ const Post = ({ post, setCurrentId }) => {
 				<Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
 			</div>
             <div className={classes.overlay2}>
-				<Button 
+                <Button 
 					style={{ color: 'white'}} 
 					size="small" 
 					onClick={() => setCurrentId(post._id)}>
@@ -29,20 +29,22 @@ const Post = ({ post, setCurrentId }) => {
             <div className={classes.details}>
 				<Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#️${tag} `)}</Typography>
 			</div>
+            
             <CardContent>
-				<Typography variant="body" color="textSecondary" component="p">💬 {post.message}</Typography>
+				<Typography variant="body1" color="textSecondary" component="p">💬 {post.message}</Typography>
 			</CardContent>
             <CardActions className={classes.cardActions}>
-				<Button size="small" color="" onClick={() => {}}>
+				<Button size="small" color="primary" onClick={() => {}}>
 					<ThumbUpAltIcon fontSize="small" />
 					&nbsp; Like &nbsp;
 					{post.likeCount}
 				</Button>
-				<Button size="small" color="" onClick={() => {}}>
+				<Button size="small" color="secondary" onClick={() => {}}>
 					<DeleteIcon fontSize="small" />
 					Delete
 				</Button>
 			</CardActions>
+            
 		</Card>
 	);
 }
