@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles(() => ({
 	appBar: {
-		borderRadius: 50,
+		borderRadius: 30,
 		margin: '40px 0',
 		display: 'flex',
 		flexDirection: 'row',
@@ -13,9 +13,10 @@ export default makeStyles(() => ({
         padding: '10px'
 	      },
 	      heading: {
-        color: '#173426',
-        fontWeight: 5,
-	fontSize: '55px'
+        color: '#242424',
+        fontWeight: 2,
+	fontSize: '55px',
+	fontFamily: 'Gill Sans'
 	      },
 	      image: {
         marginLeft: '20px',
