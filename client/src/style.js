@@ -10,7 +10,7 @@ export default makeStyles(() => ({
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
-        padding: '10px'
+        	padding: '10px'
 	      },
 	      heading: {
         color: '#242424',
