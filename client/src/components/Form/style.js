@@ -38,5 +38,10 @@ export default makeStyles((theme) => ({
     fontWeight: 10,
     fontFamily: 'gill sans',
     color: '#242424'
+  },
+  typo: {
+    fontFamily: 'gill sans',
+    fontSize: 23,
+    padding: 10,
   }
 }));
