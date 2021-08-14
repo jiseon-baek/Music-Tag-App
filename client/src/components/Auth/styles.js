@@ -30,5 +30,9 @@ export default makeStyles((theme) => ({
   googleButton: {
     marginBottom: theme.spacing(2),
   },
+  authButton: {
+    backgroundColor: '#f8f8fc',
+    color: '#242424'
+  }
   
 }));

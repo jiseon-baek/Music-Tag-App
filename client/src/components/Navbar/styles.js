@@ -51,5 +51,22 @@ export default makeStyles((theme) => ({
     },
   profile1: {
     display: 'flex',
-  }
+  },
+  [theme.breakpoints.down('sm')]: {
+		appBar: {
+			padding: 20,
+		},
+    heading: {
+      fontSize: 30,
+      marginLeft: 10,
+    },
+    image: {
+      width: 45,
+      height: 45,
+      marginLeft: 5,
+    },
+    brandContainer: {
+      width: '100%',
+    }
+	}
 }));
