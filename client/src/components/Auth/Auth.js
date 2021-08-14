@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Avatar, Button, Paper, Grid, Typography, Container, TextField } from '@material-ui/core';
 import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles';
@@ -13,6 +14,7 @@ const Auth = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
 
@@ -30,11 +32,13 @@ const Auth = () => {
     }
 
     const googleSuccess = async (res) => {
-        const result = res?.profileObj;
+        const result = res?.profileObj; //res가 존재한다면 profileObj를 반환하고, 존재하지 않는다면 undefined를 반환.
         const token = res?.tokenId;
         
         try {
             dispatch({ type: 'AUTH', data: { result, token }});
+
+            history.push('/');
         } catch (error) {
             console.log(error);
         }

@@ -28,12 +28,14 @@ export default makeStyles((theme) => ({
   },
   profile: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     width: '400px',
   },
   userName: {
     display: 'flex',
     alignItems: 'center',
+    fontFamily: 'system-ui',
+    color: '#364247'
   },
   brandContainer: {
     display: 'flex',
@@ -42,8 +44,12 @@ export default makeStyles((theme) => ({
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
+    marginRight: 10,
   },
   signInTypo: {
     backgroundColor: '#4a148c'
-    }
+    },
+  profile1: {
+    display: 'flex',
+  }
 }));
