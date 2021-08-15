@@ -5,6 +5,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     flexWrap: 'wrap-reverse',
+    flexDirection: 'row-reverse'
     
 
   },
