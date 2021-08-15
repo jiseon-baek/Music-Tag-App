@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FireBase from 'react-file-base64';
-import { useDispatch, useSelector } from 'react-redux'; 
+import { useDispatch, useSelector } from 'react-redux';
 
 import useStyles from './style';
 import { createPost, updatePost } from '../../actions/posts';
@@ -58,6 +58,7 @@ const Form = ({ currentId, setCurrentId }) => {
 			<Button className={classes.buttonClear} variant="contained" color="default" size="small" onClick={clear} fullWidth>Clear</Button>
 			</form>
 		</Paper>
+		
 	);
 }
 
