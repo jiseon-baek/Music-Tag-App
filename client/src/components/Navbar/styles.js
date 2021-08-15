@@ -69,11 +69,13 @@ export default makeStyles((theme) => ({
       width: '100%',
     },
     profile: {
-      width:'90%',
+      width:'80%',
+      display: 'inline-block'
     },
     logout: {
       marginLeft: 10,
-      height: 60,
+      height: 40,
+      marginTop: 10,
     },
     userName: {
       fontSize: 18,
@@ -81,5 +83,5 @@ export default makeStyles((theme) => ({
     profile1: {
       alignItems: 'center',
     },
-  }
+  },
 }));
