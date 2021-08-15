@@ -67,6 +67,19 @@ export default makeStyles((theme) => ({
     },
     brandContainer: {
       width: '100%',
-    }
-	}
+    },
+    profile: {
+      width:'90%',
+    },
+    logout: {
+      marginLeft: 10,
+      height: 60,
+    },
+    userName: {
+      fontSize: 18,
+    },
+    profile1: {
+      alignItems: 'center',
+    },
+  }
 }));

@@ -32,7 +32,8 @@ const Post = ({ post, setCurrentId }) => {
 	    
 	
 	return(
-		<Card className={classes.card}>
+      <div className={classes.cards}>
+         <Card className={classes.card}>
 			<CardMedia className={classes.media} image={post.selectedFile} title={post.title}/>
             <div className={classes.overlay}>
 				<Typography variant="h6">{post.name}</Typography>
@@ -66,7 +67,9 @@ const Post = ({ post, setCurrentId }) => {
 				)}
 			</CardActions>
             
-		</Card>
+		   </Card>
+      </div>
+		
 	);
 }
 
