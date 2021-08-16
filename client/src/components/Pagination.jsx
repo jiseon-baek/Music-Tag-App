@@ -1,5 +1,5 @@
 import React from 'react';
-import { PaginationItem, Pagination } from '@material-ui/lab';
+import { Pagination, PaginationItem } from '@material-ui/lab';
 import { Link } from 'react-router-dom';
 
 import useStyles from './styles';
