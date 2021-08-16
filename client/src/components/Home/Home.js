@@ -56,15 +56,11 @@ const Home = () => {
             <Container maxWidth="xl">
                 <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
                     <Grid item xs={12} sm={6} md={3}>
-                        <Form currentId={currentId} setCurrentId={setCurrentId} />
-                        <Paper elevation={6}>
-                            <Pagination page={page} className={classes.pagination} />
-                        </Paper>
                         <AppBar className={classes.appBarSearch} position="static" color="inherit">
                             <TextField 
                                 name="search" 
                                 variant="outlined" 
-                                label="Search Music"
+                                label="Search Music 🎧"
                                 onKeyPress={handleKeyPress}
                                 fullWidth
                                 value={search}
@@ -75,11 +71,20 @@ const Home = () => {
                                 value={tags}
                                 onAdd={handleAdd}
                                 onDelete={handleDelete}
-                                label="Search Tags"
+                                label="Search Tags 🖇"
                                 variant="outlined"
                             />
                             <Button onClick={searchPost} className={classes.searchButton} color="primary">Search</Button>
                         </AppBar>
+                        {(!searchQuery && !tags.length) && (
+                            <Paper elevation={6}>
+                                <Pagination page={page} className={classes.pagination} />
+                            </Paper>
+                        )}
+                        <Form currentId={currentId} setCurrentId={setCurrentId} />
+                        
+                        
+                        
                     </Grid>
                     
                     

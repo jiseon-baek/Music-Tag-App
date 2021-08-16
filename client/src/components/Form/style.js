@@ -11,6 +11,7 @@ export default makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(3),
     borderRadius: 30,
+    marginTop: '1rem'
   },
   form: {
     display: 'flex',

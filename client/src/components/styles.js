@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
 	ul: {
 		justifyContent: 'space-around',
-		margin: '20px 0',
+		marginTop: '0rem',
+		padding: '6px',
+		marginBottom: '1rem',
+		
 	}
 }))
