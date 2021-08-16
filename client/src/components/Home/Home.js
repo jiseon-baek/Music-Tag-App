@@ -3,15 +3,11 @@ import { Container, Grow, Grid, Paper, AppBar, TextField, Button } from '@materi
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { getPosts, getPostsBySearch } from '../../actions/posts';
+import { getPostsBySearch } from '../../actions/posts';
 import Pagination from '../Pagination';
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
 import ChipInput from 'material-ui-chip-input';
-
-
-
-
 import useStyles from './styles';
 
 function useQuery() {
@@ -65,24 +61,24 @@ const Home = () => {
                             <Pagination page={page} className={classes.pagination} />
                         </Paper>
                         <AppBar className={classes.appBarSearch} position="static" color="inherit">
-                        <TextField 
-                            name="search" 
-                            variant="outlined" 
-                            label="Search Music"
-                            onKeyPress={handleKeyPress}
-                            fullWidth
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                             />
-                        <ChipInput
-                            style={{ margin: '10px 0' }}
-                            value={tags}
-                            onAdd={handleAdd}
-                            onDelete={handleDelete}
-                            label="Search Tags"
-                            variant="outlined"
-                        />
-                        <Button onClick={searchPost} className={classes.searchButton} color="primary">Search</Button>
+                            <TextField 
+                                name="search" 
+                                variant="outlined" 
+                                label="Search Music"
+                                onKeyPress={handleKeyPress}
+                                fullWidth
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                />
+                            <ChipInput
+                                style={{ margin: '10px 0' }}
+                                value={tags}
+                                onAdd={handleAdd}
+                                onDelete={handleDelete}
+                                label="Search Tags"
+                                variant="outlined"
+                            />
+                            <Button onClick={searchPost} className={classes.searchButton} color="primary">Search</Button>
                         </AppBar>
                     </Grid>
                     
@@ -94,7 +90,7 @@ const Home = () => {
                 </Grid>
             </Container>
         </Grow>
-    )
+    );
         
 }
 

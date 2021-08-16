@@ -1,7 +1,8 @@
+import express from 'express';
 import mongoose  from 'mongoose';
 import PostMessage from '../models/postMessage.js';
 
-
+const router = express.Router();
 
 export const getPosts = async (req, res) => {
 	const { page } = req.query;
@@ -29,7 +30,7 @@ export const getPostsBySearch = async (req, res) => {
 
 		res.json({ data: posts });
 	} catch (error) {
-		res.json({ error: error.message });
+		res.status(404).json({ message: error.message });
 	}
 }
 
@@ -93,3 +94,5 @@ export const likePost = async (req, res) => {
 
 	res.json(updatePost);
 }
+
+export default router;
