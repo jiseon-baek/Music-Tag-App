@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Container, Grow, Grid, Paper, AppBar, TextField, Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -29,9 +29,7 @@ const Home = () => {
     const [search, setSearch] = useState('');
     const [tags, setTags] = useState([]);
 
-    useEffect(() => {
-	    dispatch(getPosts());
-    }, [currentId, dispatch]);
+    
 
     const searchPost = () => {
         if(search.trim() || tags) {
@@ -64,7 +62,7 @@ const Home = () => {
                     <Grid item xs={12} sm={6} md={3}>
                         <Form currentId={currentId} setCurrentId={setCurrentId} />
                         <Paper elevation={6}>
-                            <Pagination className={classes.pagination} />
+                            <Pagination page={page} className={classes.pagination} />
                         </Paper>
                         <AppBar className={classes.appBarSearch} position="static" color="inherit">
                         <TextField 
