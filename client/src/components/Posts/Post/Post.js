@@ -32,7 +32,9 @@ const Post = ({ post, setCurrentId }) => {
 		return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
 	      };
 
-          const openLink = () => history.push(`/posts/${post._id}`);
+          const openLink = () => {
+              history.push(`/posts/${post._id}`)
+            };
 	
 	return(
       <div className={classes.cards} raised="true" elevation={6}>

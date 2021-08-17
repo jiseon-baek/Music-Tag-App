@@ -44,5 +44,5 @@ export default makeStyles((theme) => ({
     fontFamily: 'gill sans',
     fontSize: 23,
     padding: 10,
-  }
+  },
 }));
