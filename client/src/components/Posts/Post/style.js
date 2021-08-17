@@ -6,6 +6,7 @@ export default makeStyles({
     paddingTop: '80%',
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
     backgroundBlendMode: 'darken',
+    cursor: 'pointer'
   },
   border: {
     border: 'solid',

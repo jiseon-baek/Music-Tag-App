@@ -11,6 +11,7 @@ export default makeStyles((theme) => ({
   pagination: {
     borderRadius: 4, 
     padding: '16px',
+    
   },
   gridContainer: {
     [theme.breakpoints.down('xs')]: {
@@ -22,5 +23,6 @@ export default makeStyles((theme) => ({
   },
   form: {
     marginTop: '1rem',
-  }
+  },
+  
 }));

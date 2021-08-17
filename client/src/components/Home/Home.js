@@ -50,12 +50,14 @@ const Home = () => {
 
     }
 
+    
+
 
     return (
         <Grow in>
             <Container maxWidth="xl" style={{ padding: '4px' }}>
                 <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid item xs={12} sm={6} md={3} style={{ alignitems: 'center'}}>
                         <Form currentId={currentId} setCurrentId={setCurrentId} />
                         <AppBar className={classes.appBarSearch} position="static" color="inherit">
                             <TextField 
@@ -82,12 +84,11 @@ const Home = () => {
                                 <Pagination page={page} className={classes.pagination} />
                             </Paper>
                         )}
-                        
+
                         
                         
                         
                     </Grid>
-                    
                     
                     <Grid item xs={12} sm={6} md={9}>
                         <Posts setCurrentId={setCurrentId} />
