@@ -31,9 +31,11 @@ export const getPostsBySearch = (searchQuery) => async(dispatch) => {
 	try {
 		dispatch({ type: START_LOADING });
 		const { data: { data } } = await api.fetchPostsBySearch(searchQuery);
+		
 
 		dispatch({ type: FETCH_BY_SEARCH, payload: { data } });
 		dispatch({ type: END_LOADING });
+		console.log(data);
 
 	} catch (error) {
 		console.log(error);
@@ -45,11 +47,12 @@ export const createPost = (post, history) => async (dispatch) => {
 		dispatch({ type: START_LOADING });
 		const { data } = await api.createPost(post);
 
-		history.push(`/posts/${data._id}`);
+		
 
 		dispatch({ type: CREATE, payload: data });
+		history.push(`/posts/${data._id}`);
 	} catch (error) {
-		console.log(error.message);
+		console.log(error);
 	}
 }
 
