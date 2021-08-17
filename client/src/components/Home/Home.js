@@ -3,7 +3,7 @@ import { Container, Grow, Grid, Paper, AppBar, TextField, Button } from '@materi
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { getPostsBySearch } from '../../actions/posts';
+import { getPosts, getPostsBySearch } from '../../actions/posts';
 import Pagination from '../Pagination';
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
@@ -30,9 +30,8 @@ const Home = () => {
     const searchPost = () => {
         if(search.trim() || tags) {
             dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
-
             history.push(`/posts/search?searchQuery=${search || 'none'}&tags=${tags.join(',')}`);
-
+            
         } else {
             history.push('/');
         }
@@ -70,7 +69,7 @@ const Home = () => {
                                 onChange={(e) => setSearch(e.target.value)}
                                 />
                             <ChipInput
-                                style={{ margin: '10px 0' }}
+                                style={{ margin: '10px 0', textTransform: 'lowercase' }}
                                 value={tags}
                                 onAdd={handleAdd}
                                 onDelete={handleDelete}
@@ -83,10 +82,7 @@ const Home = () => {
                             <Paper elevation={6}>
                                 <Pagination page={page} className={classes.pagination} />
                             </Paper>
-                        )}
-
-                        
-                        
+                        )} 
                         
                     </Grid>
                     
