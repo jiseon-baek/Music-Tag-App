@@ -53,7 +53,7 @@ const Home = () => {
 
     return (
         <Grow in>
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" style={{ padding: '4px' }}>
                 <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
                     <Grid item xs={12} sm={6} md={3}>
                         <Form currentId={currentId} setCurrentId={setCurrentId} />

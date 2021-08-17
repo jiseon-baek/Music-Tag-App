@@ -9,6 +9,7 @@ export default makeStyles((theme) => ({
     flexDirection: 'row',
     alignItems: 'center',
     padding: '0px',
+    paddingRight: '20px'
     
   },
   heading: {
