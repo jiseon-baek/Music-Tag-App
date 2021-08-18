@@ -5,7 +5,7 @@ import moment from 'moment';
 import { useParams, useHistory } from 'react-router-dom';
 import useStyles from './styles';
 
-import { getPost } from '../../actions/posts';
+import { getPost, getPostsBySearch } from '../../actions/posts';
 
 const PostDetails = () => {
 	const { post, posts, isLoading } = useSelector((state) => state.posts);
@@ -18,6 +18,12 @@ const PostDetails = () => {
 		dispatch(getPost(id));
 	}, [id]);
 
+	useEffect(() => {
+		if(post) {
+			dispatch(getPostsBySearch({ search: 'none', tags: post?.tags.join(',')}));
+		}
+	}, [post]);
+
 	if(!post) return null;
 	
 	if(isLoading) return (
@@ -25,6 +31,10 @@ const PostDetails = () => {
 			<CircularProgress color="secondary" size="7em" />
 		</Paper>
 	)
+
+	const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
+
+	const openPost = (_id) => history.push(`/posts/${_id}`);
 
 	return (
 		<Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
@@ -44,6 +54,25 @@ const PostDetails = () => {
                 <img className={classes.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
             </div>
         </div>
+	{recommendedPosts.length && (
+		<div className={classes.section}>
+			<Typography gutterBottom variant="h5" style={{ }}>You might also like 🎵</Typography>
+			<Divider />
+			<div className={classes.recommendedPosts}>
+				{recommendedPosts.map(({ title, message, name, likes, selectedFile, _id}) => (
+					<div style={{ padding: '20px 40px', margin: '10px', cursor: 'pointer', border: '1px solid lightgrey', borderRadius: '20px', }} className={classes.recomPost} onClick={() => openPost(_id)} key={_id}>
+						<Typography gutterBottom variant="h6" className={classes.title}>{title}</Typography>
+						<Typography gutterBottom variant="subtitle2" className={classes.name}>{name}</Typography>
+						<Typography gutterBottom variant="subtitle2" className={classes.message}>{message}</Typography>
+						<Typography gutterBottom variant="subtitle1">❤︎ {likes.length}</Typography>
+						<img src={selectedFile} width="200px" />
+					</div>
+				))}
+
+			</div>
+			
+		</div>
+	)}
         </Paper>
 	)
 }

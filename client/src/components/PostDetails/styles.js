@@ -30,6 +30,8 @@ export default makeStyles((theme) => ({
   },
   recommendedPosts: {
     display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
@@ -39,5 +41,19 @@ export default makeStyles((theme) => ({
   },
   linkButton: {
 	fontWeight: 'bold',
+  },
+  recomPost: {
+    border: '1px solid',
+  },
+  title: {
+    fontSize: '22px',
+    fontWeight: 'normal',
+    fontFamily: 'gill sans',
+  },
+  name: {
+    fontFamily: 'gill sans',
+  },
+  message: {
+    fontWeight: 'lighter',
   }
 }));
