@@ -55,5 +55,17 @@ export default makeStyles((theme) => ({
   },
   message: {
     fontWeight: 'lighter',
+  },
+  [theme.breakpoints.down('sm')]: {
+    media: {
+      width: '320px',
+      height: '320px',
+      margin: '20px 0 30px'
+    },
+    recomTypo: {
+      fontSize: '20px',
+      fontWeight: 'bold'
+    }
+
   }
 }));
