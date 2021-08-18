@@ -21,7 +21,7 @@ app.use('/user', userRoutes);
 
 app.get('/', (req, res) => {
 	res.send(
-		'Hello to Music Api'
+		'App is running!'
 	);
 })
 

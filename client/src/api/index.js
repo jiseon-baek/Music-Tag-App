@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'https://music-tag-app-2.herokuapp.com/posts' });
+const API = axios.create({ baseURL: 'https://music-tag-app-2.herokuapp.com/' });
 
 API.interceptors.request.use((req) => {
 	if(localStorage.getItem('profile')) {
