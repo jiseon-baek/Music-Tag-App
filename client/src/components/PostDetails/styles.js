@@ -46,15 +46,19 @@ export default makeStyles((theme) => ({
     border: '1px solid',
   },
   title: {
-    fontSize: '22px',
-    fontWeight: 'normal',
-    fontFamily: 'gill sans',
+    fontSize: '18px',
+    fontWeight: '100',
+    fontFamily: 'Nanum Barun Gothic',
+    fontStyle: 'normal'
   },
   name: {
     fontFamily: 'gill sans',
   },
   message: {
     fontWeight: 'lighter',
+  },
+  recomTypo: {
+    fontFamily: 'gill sans'
   },
   [theme.breakpoints.down('sm')]: {
     media: {

@@ -49,6 +49,7 @@ export default makeStyles({
   title: {
     padding: '0 16px',
     fontFamily: 'gill sans',
+    fontSize: '24px',
   },
   cardActions: {
     padding: '0 16px 8px 16px',
