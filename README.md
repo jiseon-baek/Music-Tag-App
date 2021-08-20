@@ -10,15 +10,3 @@
 
 # Deploy
 <img alt="Heroku" src ="https://img.shields.io/badge/heroku-430098.svg?&style=for-the-badge&logo=heroku&logoColor=white"/> <img alt="netlify" src ="https://img.shields.io/badge/netlify-00C7B7.svg?&style=for-the-badge&logo=netlify&logoColor=white"/>
-
-
-
-
-
-=======
-# Music-Tag-App
-🛠 Stack : Using React + Redux, Node, Express, MongoDB
-
-
-<img width="1440" alt="스크린샷 2021-08-19 오후 11 14 08" src="https://user-images.githubusercontent.com/83223501/130085726-1cde4a5f-77c0-426b-b291-d716020349f6.png">
->>>>>>> 70c9852e174d9ef449e3efa20f1c580dcff3f8f9
