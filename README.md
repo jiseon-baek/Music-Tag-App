@@ -1,6 +1,7 @@
 # Music-Tag-App 🎧
 
-<img width="1440" alt="스크린샷 2021-08-15 오후 3 27 55" src="https://user-images.githubusercontent.com/83223501/129469453-b53fb18a-b5e6-4225-ba1a-b1c940a9cbda.png">
+<img width="1440" alt="스크린샷 2021-08-20 오후 12 38 53" src="https://user-images.githubusercontent.com/83223501/130175550-5ffed103-6851-4272-b30e-1003e5865739.png">
+
 
 # Stack
 
