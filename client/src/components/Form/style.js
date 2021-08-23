@@ -40,9 +40,18 @@ export default makeStyles((theme) => ({
     fontFamily: 'gill sans',
     color: '#242424'
   },
-  typo: {
+  typo1: {
     fontFamily: 'gill sans',
-    fontSize: 23,
+    fontSize: 21,
     padding: 10,
+    
   },
+  typo2: {
+    fontWeight: '100',
+    fontFamily: 'Nanum Barun Gothic',
+    fontStyle: 'normal',
+    fontSize: 17,
+    padding: 10,
+    color: '#3d3d3d'
+  }
 }));

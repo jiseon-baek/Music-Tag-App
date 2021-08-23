@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { TextField, Button, Typography, Paper, Divider } from '@material-ui/core';
 import FireBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -37,9 +37,15 @@ const Form = ({ currentId, setCurrentId }) => {
 	      if(!user?.result?.name) {
 		      return (
 			      <Paper className={classes.paper}>
-				      <Typography className={classes.typo} variant="h6" align="center">
+				      <Typography className={classes.typo1} variant="h6" align="center">
 					      Welcome!👋🏻 Please Sign In to create your music post or like other's post!
+					      
 				      </Typography>
+				      <Divider style={{ margin: '10px 0' }} />
+				      <Typography className={classes.typo2} variant="h6" align="center">
+				      	Music Tag App에 오신 걸 환영합니다 음악을 공유하고 싶다면 로그인해주세요 ☺
+				      </Typography>
+				      
 			      </Paper>
 		      )
 	      }
