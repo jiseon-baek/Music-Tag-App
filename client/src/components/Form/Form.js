@@ -43,7 +43,7 @@ const Form = ({ currentId, setCurrentId }) => {
 				      </Typography>
 				      <Divider style={{ margin: '10px 0' }} />
 				      <Typography className={classes.typo2} variant="h6" align="center">
-				      	Music Tag App에 오신 걸 환영합니다 음악을 공유하고 싶다면 로그인해주세요 ☺
+				      	Music Tag App에 오신 것을 <br /> 환영합니다 🎵 <br /> 나만의 음악을 공유하고 싶다면 <br /> 로그인해주세요 ☺
 				      </Typography>
 				      
 			      </Paper>
