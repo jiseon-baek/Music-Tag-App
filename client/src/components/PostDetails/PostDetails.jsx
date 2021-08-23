@@ -46,7 +46,7 @@ const PostDetails = () => {
             <Typography variant="h6" style={{ fontFamily: 'gill sans'}}>Created by: {post.name}</Typography>
             <Typography variant="body1">{moment(post.createdAt).fromNow()}</Typography>
             <Divider style={{ margin: '40px 0' }} />
-                <Button variant="outlined" color="secondary" className={classes.linkButton} interactive href="https://youtube.com/playlist?list=PLKVkteTPlx5VZRjKbefvHPV62MM0KlOR3">Play music 🎧</Button>
+                <Button variant="outlined" color="secondary" className={classes.linkButton} interactive="true" href="https://youtube.com/playlist?list=PLKVkteTPlx5VZRjKbefvHPV62MM0KlOR3">Play music 🎧</Button>
             
             </div>
             <div className={classes.imageSection}>
