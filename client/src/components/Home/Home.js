@@ -3,7 +3,7 @@ import { Container, Grow, Grid, Paper, AppBar, TextField, Button } from '@materi
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { getPosts, getPostsBySearch } from '../../actions/posts';
+import { getPostsBySearch } from '../../actions/posts';
 import Pagination from '../Pagination';
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
