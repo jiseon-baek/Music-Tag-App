@@ -27,19 +27,20 @@
 
 # 기능
 ## 회원가입 및 로그인
-
+* ### 로그인 및 회원가입 화면
 ![Hnet-image (1)](https://user-images.githubusercontent.com/83223501/130738117-436560f0-210e-4b07-84c8-1fa75f8e5f99.gif)
 
 
 
-*  로그인 및 회원가입 화면
+
 
 
 
 </br>
 
+* ### Google OAuth 인증을 통한 로그인 구현
 ![Hnet-image](https://user-images.githubusercontent.com/83223501/130737438-ae49603a-9fa3-4bf6-a204-8bcaa4b57033.gif)
-* Google OAuth 인증을 통한 로그인 구현
+
 
 
 </br>
@@ -62,8 +63,16 @@
 </br>
 </br>
 
-# Search
-![Hnet-image (2)](https://user-images.githubusercontent.com/83223501/130743292-a1ffce93-0db0-46fd-b5f9-0174a29a7364.gif)
+## Search
+* ### Tag 및 Title 검색 기능
+![Hnet-image (3)](https://user-images.githubusercontent.com/83223501/130743614-c7185ff7-e1ba-4c0f-9c23-73367be9d0d0.gif)
+
+## Pagination(페이징)
+![Hnet-image (4)](https://user-images.githubusercontent.com/83223501/130746245-1ec485ec-9a73-40c1-ad75-be09b080e2da.gif)
 
 
- 
+## 상세페이지 & 태그별 추천 Post
+
+![Hnet-image (5)](https://user-images.githubusercontent.com/83223501/130747904-43904cb8-ba53-4967-b73c-d718b20eaa7a.gif)
+
+
