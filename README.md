@@ -28,15 +28,42 @@
 # 기능
 ## 회원가입 및 로그인
 
-<img width="1440" alt="스크린샷 2021-08-20 오후 12 38 53" src="https://media.vlpt.us/images/jiseon-baek/post/9f13ea3b-1fac-4b28-bbaa-7e2c630dc544/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%201.32.32.png">
+![Hnet-image (1)](https://user-images.githubusercontent.com/83223501/130738117-436560f0-210e-4b07-84c8-1fa75f8e5f99.gif)
 
-### 로그인 화면
+
+
+*  로그인 및 회원가입 화면
+
 
 
 </br>
-<img width="1440" alt="스크린샷 2021-08-20 오후 12 38 53" src="https://media.vlpt.us/images/jiseon-baek/post/bc556839-5ba1-4bcc-91ef-f7cb07c7e034/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%201.31.14.png">
 
-### 회원가입 화면
+![Hnet-image](https://user-images.githubusercontent.com/83223501/130737438-ae49603a-9fa3-4bf6-a204-8bcaa4b57033.gif)
+* Google OAuth 인증을 통한 로그인 구현
 
 
-## 
+</br>
+</br>
+
+## CRUD
+* ### form 입력후 제출 시 post 생성
+
+![Hnet-image](https://user-images.githubusercontent.com/83223501/130740374-590ab76d-2156-45db-8bbc-ec15b60aa2d3.gif)
+</br>
+
+* ### Edit 수정 기능
+
+![Hnet-image (1)](https://user-images.githubusercontent.com/83223501/130741072-3ff4e5fb-f56c-45bf-be70-d23c5aee6a6a.gif)
+
+
+* ### Delete 삭제 기능
+![Hnet com-image](https://user-images.githubusercontent.com/83223501/130742356-3e048cc7-b410-46f0-84cf-7799fa27ac1d.gif)
+
+</br>
+</br>
+
+# Search
+![Hnet-image (2)](https://user-images.githubusercontent.com/83223501/130743292-a1ffce93-0db0-46fd-b5f9-0174a29a7364.gif)
+
+
+ 
