@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { Avatar, Button, Paper, Grid, Typography, Container, CircularProgress } from '@material-ui/core';
 import { GoogleLogin } from 'react-google-login';
+import  KakaoLogin  from 'react-kakao-login';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -8,7 +9,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles';
 import Input from './Input';
 import Icon from './icon';
-import { signup, signin } from '../../actions/auth';
+import { signup, signin, kakaoLogin } from '../../actions/auth';
+import { KAKAO_AUTH_URL } from './kakaoOAuth';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
 
@@ -19,8 +21,8 @@ const Auth = () => {
     const [formData, setFormData] = useState(initialState);
     const dispatch = useDispatch();
     const history = useHistory();
-    const { Kakao } = 'window';
-    const KAKAO_LOGIN_API_URL = ""
+    
+    
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
 
@@ -60,25 +62,35 @@ const Auth = () => {
         console.log('Google Sign In was unsuccessful. Try again later');
     }
 
-    const handleLoginKakao = () => {
-        Kakao.auth.login({
-            success: function(authObj) {
-                fetch(`${KAKAO_LOGIN_API_URL}`, { 
-                    method: 'POST',
-                    body: JSON.stringify({ access_token: authObj.access_token,}),
-                })
-            }
-        })
-        .then(res => res.json())
-        .then(res => {
-            localStorage.setItem("Kakao_token", res.access_token);
-            if(res.access_token) {
-                alert("Music Tag App에 오신걸 환영합니다");
-                history.push('/login');
-            }
-            
-        })
+    const KakaoHandler = (props) => {
+        let code = new URL(window.loaction.href).searchParams.get("code");
+
+        useEffect(() => {
+            dispatch(kakaoLogin(formData, history));
+        }, []);
+
+        return <CircularProgress />
     }
+
+    //const handleLoginKakao = () => {
+        //Kakao.auth.login({
+            //success: function(authObj) {
+                //fetch(`${KAKAO_LOGIN_API_URL}`, { 
+                    //method: 'POST',
+                    //body: JSON.stringify({ access_token: authObj.access_token,}),
+                //})
+            //}
+        //})
+        //.then(res => res.json())
+        //.then(res => {
+            //localStorage.setItem("Kakao_token", res.access_token);
+            //if(res.access_token) {
+                //alert("Music Tag App에 오신걸 환영합니다");
+                //history.push('/login');
+            //}
+            
+        //})
+    //}
     
 
 	return (
@@ -115,7 +127,15 @@ const Auth = () => {
                         onFailure={googleFailure}
                         cookiePolicy="single_host_origin"
                     />
-                    <Button className={classes.kakaoBtn} onClick={handleLoginKakao}>Kakao Login</Button>
+                    <KakaoLogin
+                        jsKey="57cbb8f1f02adcfbf259f8d490e9bd15"
+                        onSuccess={result => KakaoHandler(result)}
+                        onFailure={result => console.log(result)}
+                        render={(props: any) => (
+                            <Button className={classes.kakaoBtn} href={KAKAO_AUTH_URL} onClick={props.onClick}>Kakao Login</Button>
+                        )}
+                        getProfile={true}
+                    />
                     <Grid container justifyContent="flex-end">
                         <Grid item>
                             <Button onClick={switchMode} className={classes.authButton}>

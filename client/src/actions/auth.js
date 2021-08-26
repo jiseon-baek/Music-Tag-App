@@ -30,3 +30,15 @@ export const signup = (formData, history) => async (dispatch) => {
 	}
 }
 
+export const kakaoLogin = (formData, history) => async (dispatch) => {
+	try {
+		const { data } = await api.kakaoLogin(formData);
+
+		dispatch({ type: AUTH, data });
+
+		history.push('/');
+	} catch (error) {
+		console.log("소셜로그인 실패", error);
+	}
+}
+
