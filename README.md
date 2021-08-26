@@ -51,28 +51,44 @@
 
 ![Hnet-image](https://user-images.githubusercontent.com/83223501/130740374-590ab76d-2156-45db-8bbc-ec15b60aa2d3.gif)
 </br>
+</br>
 
 * ### Edit 수정 기능
+* 오른쪽 위 ••• 클릭 시 Form 수정 가능(Id 일치시)
 
 ![Hnet-image (1)](https://user-images.githubusercontent.com/83223501/130741072-3ff4e5fb-f56c-45bf-be70-d23c5aee6a6a.gif)
 
 
 * ### Delete 삭제 기능
+* 자신의 Card 삭제 가능(Id 일치시)
 ![Hnet com-image](https://user-images.githubusercontent.com/83223501/130742356-3e048cc7-b410-46f0-84cf-7799fa27ac1d.gif)
+
+* ### Like 좋아요 기능
+* 자신 및 다른 사람 포스팅 좋아요 기능(로그아웃 시 불가능)
+
+![Hnet-image (6)](https://user-images.githubusercontent.com/83223501/130750061-eed6f298-4490-4df6-8ca6-68b9c69c4b44.gif)
+
 
 </br>
 </br>
 
 ## Search
 * ### Tag 및 Title 검색 기능
+* Hash Tag 검색 기능: 콤마로 구분해 해시태그 생성 가능(일치하는 모든 Post을 보여줌)
 ![Hnet-image (3)](https://user-images.githubusercontent.com/83223501/130743614-c7185ff7-e1ba-4c0f-9c23-73367be9d0d0.gif)
 
+</br>
+
 ## Pagination(페이징)
+* 페이징: Post가 많아 지면 자동 페이징 기능
+  
 ![Hnet-image (4)](https://user-images.githubusercontent.com/83223501/130746245-1ec485ec-9a73-40c1-ad75-be09b080e2da.gif)
 
+</br>
 
 ## 상세페이지 & 태그별 추천 Post
-
+* 상세 페이지: card 클릭 시 상세 페이지가 나타나고, 태그와 일치하는 추천 Post들을 보여준다.
+  
 ![Hnet-image (5)](https://user-images.githubusercontent.com/83223501/130747904-43904cb8-ba53-4967-b73c-d718b20eaa7a.gif)
 
 
