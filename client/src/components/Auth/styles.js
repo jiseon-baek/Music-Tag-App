@@ -33,6 +33,11 @@ export default makeStyles((theme) => ({
   authButton: {
     backgroundColor: '#f8f8fc',
     color: '#242424'
+  },
+  kakaoBtn: {
+    backgroundColor: '#f9e000',
+    width: '100%',
+    height: '100%',
   }
   
 }));
