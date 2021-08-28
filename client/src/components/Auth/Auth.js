@@ -129,7 +129,7 @@ const Auth = () => {
                     />
                     <KakaoLogin
                         jsKey="57cbb8f1f02adcfbf259f8d490e9bd15"
-                        onSuccess={result => KakaoHandler(result)}
+                        onSuccess={result => this.KakaoHandler(result)}
                         onFailure={result => console.log(result)}
                         render={(props: any) => (
                             <Button className={classes.kakaoBtn} href={KAKAO_AUTH_URL} onClick={props.onClick}>Kakao Login</Button>
