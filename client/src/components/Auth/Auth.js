@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Avatar, Button, Paper, Grid, Typography, Container, CircularProgress } from '@material-ui/core';
 import { GoogleLogin } from 'react-google-login';
 import  KakaoLogin  from 'react-kakao-login';
@@ -9,10 +9,16 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles';
 import Input from './Input';
 import Icon from './icon';
-import { signup, signin, kakaoLogin } from '../../actions/auth';
+import { signup, signin } from '../../actions/auth';
 import { KAKAO_AUTH_URL } from './kakaoOAuth';
 
+
+
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
+
+const KAKAO_SDK = '';
+const KAKAO_TOKEN = "";
+const KAKAO_REDIRECT = "http://localhost:3000/posts";
 
 const Auth = () => {
 	const classes = useStyles();
@@ -22,7 +28,20 @@ const Auth = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     
-    
+    useEffect(() => {
+        const script = document.createElement('script');
+
+        script.src=KAKAO_SDK;
+        script.onload = () => handleSuccess();
+
+        document.body.appendChild(script);
+
+        return () => script.remove();
+    }, []);
+
+    const handleSuccess = useCallback(() => {
+        Kakao.init(KAKAO_TOKEN);
+    }, []);
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
 
@@ -62,15 +81,9 @@ const Auth = () => {
         console.log('Google Sign In was unsuccessful. Try again later');
     }
 
-    const KakaoHandler = (props) => {
-        let code = new URL(window.loaction.href).searchParams.get("code");
+    
+        
 
-        useEffect(() => {
-            dispatch(kakaoLogin(formData, history));
-        }, []);
-
-        return <CircularProgress />
-    }
 
     //const handleLoginKakao = () => {
         //Kakao.auth.login({
@@ -129,8 +142,9 @@ const Auth = () => {
                     />
                     <KakaoLogin
                         jsKey="57cbb8f1f02adcfbf259f8d490e9bd15"
-                        onSuccess={result => this.KakaoHandler(result)}
-                        onFailure={result => console.log(result)}
+                        buttonText="Kakao Login"
+                        onSuccess={res => console.log(res)}
+                        onFailure={res => console.log(res)}
                         render={(props: any) => (
                             <Button className={classes.kakaoBtn} href={KAKAO_AUTH_URL} onClick={props.onClick}>Kakao Login</Button>
                         )}
