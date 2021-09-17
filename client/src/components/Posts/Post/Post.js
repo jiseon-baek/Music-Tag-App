@@ -37,7 +37,7 @@ const Post = ({ post, setCurrentId }) => {
 	};
 
 	return (
-		<container className={classes.container}>
+		<div className={classes.container}>
 			<div className={classes.cards} raised="true" elevation={6}>
 				<Card className={classes.card}>
 					<CardMedia className={classes.media} image={post.selectedFile} onClick={openLink} title={post.title} />
@@ -77,7 +77,7 @@ const Post = ({ post, setCurrentId }) => {
 
 				</Card>
 			</div>
-		</container>
+		</div>
 	);
 }
 
