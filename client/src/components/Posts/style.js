@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     padding: '0px',
     paddingRight: '20px'
-    
+
   },
   heading: {
     color: 'rgba(0,183,255, 1)',

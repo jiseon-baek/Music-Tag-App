@@ -14,6 +14,13 @@ export default makeStyles({
   fullHeightCard: {
     height: '100%',
   },
+  container: {
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+      display: 'flex',
+      justifyContent: 'center',
+
+    }
+  },
   card: {
     display: 'flex',
     flexDirection: 'column',
@@ -21,9 +28,20 @@ export default makeStyles({
     borderRadius: '15px',
     height: '100%',
     position: 'relative',
+    ['@media (max-width:780px)']: { // eslint-disable-line no-useless-computed-key
+
+      width: '90vw',
+
+      boxSizing: 'border-box',
+
+    }
   },
   cards: {
-    
+    transition: 'all 150ms ease-in',
+    cursor: 'pointer',
+    "&:hover": {
+      transform: 'scale(1.03)',
+    }
   },
   overlay: {
     position: 'absolute',
@@ -44,7 +62,7 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
     margin: '20px',
-    
+
   },
   title: {
     padding: '0 16px',
