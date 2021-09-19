@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Avatar, Button, Paper, Grid, Typography, Container, CircularProgress } from '@material-ui/core';
 import { GoogleLogin } from 'react-google-login';
-import KakaoLogin from 'react-kakao-login';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -10,15 +9,10 @@ import useStyles from './styles';
 import Input from './Input';
 import Icon from './icon';
 import { signup, signin } from '../../actions/auth';
-import { KAKAO_AUTH_URL } from './kakaoOAuth';
-
 
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
 
-const KAKAO_SDK = '';
-const KAKAO_TOKEN = "";
-const KAKAO_REDIRECT = "http://localhost:3000/posts";
 
 const Auth = () => {
     const classes = useStyles();
@@ -84,28 +78,6 @@ const Auth = () => {
 
 
 
-
-    //const handleLoginKakao = () => {
-    //Kakao.auth.login({
-    //success: function(authObj) {
-    //fetch(`${KAKAO_LOGIN_API_URL}`, { 
-    //method: 'POST',
-    //body: JSON.stringify({ access_token: authObj.access_token,}),
-    //})
-    //}
-    //})
-    //.then(res => res.json())
-    //.then(res => {
-    //localStorage.setItem("Kakao_token", res.access_token);
-    //if(res.access_token) {
-    //alert("Music Tag App에 오신걸 환영합니다");
-    //history.push('/login');
-    //}
-
-    //})
-    //}
-
-
     return (
         <Container component="main" maxWidth="xs">
             <Paper className={classes.paper} elevation={3}>
@@ -140,16 +112,7 @@ const Auth = () => {
                         onFailure={googleFailure}
                         cookiePolicy="single_host_origin"
                     />
-                    <KakaoLogin
-                        jsKey="57cbb8f1f02adcfbf259f8d490e9bd15"
-                        buttonText="Kakao Login"
-                        onSuccess={res => console.log(res)}
-                        onFailure={res => console.log(res)}
-                        render={(props: any) => (
-                            <Button className={classes.kakaoBtn} href={KAKAO_AUTH_URL} onClick={props.onClick}>Kakao Login</Button>
-                        )}
-                        getProfile={true}
-                    />
+
                     <Grid container justifyContent="flex-end">
                         <Grid item>
                             <Button onClick={switchMode} className={classes.authButton}>
