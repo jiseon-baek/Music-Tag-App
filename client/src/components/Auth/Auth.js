@@ -22,16 +22,7 @@ const Auth = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    useEffect(() => {
-        const script = document.createElement('script');
 
-        script.src = KAKAO_SDK;
-        script.onload = () => handleSuccess();
-
-        document.body.appendChild(script);
-
-        return () => script.remove();
-    }, []);
 
     const handleSuccess = useCallback(() => {
         //Kakao.init(KAKAO_TOKEN);
