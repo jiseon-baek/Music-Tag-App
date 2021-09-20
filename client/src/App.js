@@ -14,10 +14,10 @@ import Auth from './components/Auth/Auth';
 const App = () => {
 
     const user = JSON.parse(localStorage.getItem('profile'));
-	
-	return( 
+
+    return (
         <BrowserRouter>
-            <Container maxwidth="false" style={{ padding: '0'}}>
+            <Container maxwidth="false" style={{ padding: '0' }}>
                 <Navbar />
                 <Switch>
                     <Route path="/" exact component={() => <Redirect to="/posts" />} />
@@ -25,11 +25,12 @@ const App = () => {
                     <Route path="/posts/search" exact component={Home} />
                     <Route path="/posts/:id" component={PostDetails} />
                     <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts" />)} />
+                    <Redirect path="*" to="/" />
                 </Switch>
-		    </Container>
+            </Container>
         </BrowserRouter>
-		
-	);
+
+    );
 }
 
 export default App;
