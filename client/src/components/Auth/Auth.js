@@ -1,14 +1,15 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Avatar, Button, Paper, Grid, Typography, Container, CircularProgress } from '@material-ui/core';
 import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import useStyles from './styles';
 import Input from './Input';
 import Icon from './icon';
 import { signup, signin } from '../../actions/auth';
+
+import { Avatar, Button, Paper, Grid, Typography, Container, CircularProgress } from '@material-ui/core';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import useStyles from './styles';
 
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
@@ -22,11 +23,6 @@ const Auth = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-
-
-    const handleSuccess = useCallback(() => {
-        //Kakao.init(KAKAO_TOKEN);
-    }, []);
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
 
@@ -86,7 +82,7 @@ const Auth = () => {
                                 </>
                             )}
                         <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
-                        <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} />
+                        <Input name="password" label="Password" handleChange={handleChange} inputProps={{ maxLength: 8 }} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} error={"password" === '' ? true : false} helperText="비밀번호 8자 이상" />
                         {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
                     </Grid>
                     <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
