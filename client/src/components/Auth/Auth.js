@@ -7,7 +7,7 @@ import Input from './Input';
 import Icon from './icon';
 import { signup, signin } from '../../actions/auth';
 
-import { Avatar, Button, Paper, Grid, Typography, Container, CircularProgress } from '@material-ui/core';
+import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles';
 
