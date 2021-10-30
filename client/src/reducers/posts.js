@@ -1,6 +1,6 @@
 import { createAction, handleActions } from 'redux-actions';
 import { FETCH_ALL, FETCH_BY_SEARCH, FETCH_POST, CREATE, UPDATE, DELETE, LIKE, START_LOADING, END_LOADING } from '../constants/actionTypes';
-
+import produce from 'immer';
 /*
 export default (state = { isLoading: true, posts: [] }, action) => {
   switch (action.type) {
