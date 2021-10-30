@@ -64,7 +64,7 @@ const PostDetails = () => {
 						<Typography gutterBottom variant="subtitle2" className={classes.name}>{name}</Typography>
 						<Typography gutterBottom variant="subtitle2" className={classes.message}>{message}</Typography>
 						<Typography gutterBottom variant="subtitle1">❤︎ {likes.length}</Typography>
-						<img src={selectedFile} width="200px" style={{ borderRadius: '12px', margin: '10px 0 0 0'}} />
+						<img src={selectedFile} width="200px" style={{ borderRadius: '12px', margin: '10px 0 0 0'}} alt="selectedFile"/>
 					</div>
 				))}
 

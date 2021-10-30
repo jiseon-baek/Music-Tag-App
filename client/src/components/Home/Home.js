@@ -55,6 +55,9 @@ const Home = () => {
   } 
 
   const handleDelete = (tagToDelete) => {
+    //setTags(produce(tags, draft => {
+      //draft.splice(draft.findIndex(tags => tags.id === id), 1)
+    //}));
     setTags(tags.filter((tag) => tag !== tagToDelete));
   };
 
