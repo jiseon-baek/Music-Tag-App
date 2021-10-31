@@ -71,4 +71,4 @@ const Form = ({ currentId, setCurrentId }) => {
 	);
 }
 
-export default Form;
+export default React.memo(Form);

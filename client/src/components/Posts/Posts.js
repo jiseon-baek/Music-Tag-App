@@ -28,4 +28,4 @@ const Posts = ({ setCurrentId }) => {
 	);
 }
 
-export default Posts;
+export default React.memo(Posts);
