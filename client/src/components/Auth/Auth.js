@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -22,6 +22,9 @@ const Auth = () => {
     const [formData, setFormData] = useState(initialState);
     const dispatch = useDispatch();
     const history = useHistory();
+
+    const callSignup = useCallback((formData, history) => dispatch(signup(formData, history)), [dispatch]);
+    const callSignin = useCallback((formData, history) => dispatch(signin(formData, history)), [dispatch]);
 
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
