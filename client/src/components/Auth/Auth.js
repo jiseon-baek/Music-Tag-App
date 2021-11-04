@@ -23,8 +23,12 @@ const Auth = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const callSignup = useCallback((formData, history) => dispatch(signup(formData, history)), [dispatch]);
-    const callSignin = useCallback((formData, history) => dispatch(signin(formData, history)), [dispatch]);
+    const callSignup = useCallback(() => {
+        dispatch(signup(formData, history));
+    }, [formData, history]);
+    const callSignin = useCallback(() => {
+        dispatch(signin(formData, history));
+    }, [formData, history]);
 
 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -33,9 +37,11 @@ const Auth = () => {
         e.preventDefault();
 
         if (isSignup) {
-            dispatch(signup(formData, history));
+            //dispatch(signup(formData, history));
+            callSignup();
         } else {
-            dispatch(signin(formData, history));
+            //dispatch(signin(formData, history));
+            callSignin();
         }
     }
 
@@ -85,7 +91,7 @@ const Auth = () => {
                                 </>
                             )}
                         <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
-                        <Input name="password" label="Password" handleChange={handleChange} inputProps={{ maxLength: 8 }} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} error={"password" === '' ? true : false} helperText="비밀번호 8자 이상" />
+                        <Input name="password" label="Password" handleChange={handleChange} inputProps={{ maxLength: 8 }} type={showPassword ? "text" : "password"} handleShowPassword={handleShowPassword} error={"password" === '' ? true : false} helperText="비밀번호 8자 이상" autoComplete="current-password" />
                         {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
                     </Grid>
                     <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
