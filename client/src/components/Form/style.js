@@ -48,7 +48,7 @@ export default makeStyles((theme) => ({
   },
   typo2: {
     fontWeight: '100',
-    fontFamily: 'Nanum Barun Gothic',
+    
     fontStyle: 'normal',
     fontSize: 17,
     padding: 10,

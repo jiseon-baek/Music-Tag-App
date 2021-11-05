@@ -40,8 +40,8 @@ const PostDetails = () => {
 		<Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
 			<div className={classes.card}>
 				<div className={classes.section}>
-					<Typography variant="h3" component="h2" style={{ fontFamily: 'Nanum Barun Gothic', fontWeight: '100', fontStyle: "normal", margin: '20px 0', fontSize: '45px' }}>🎧 {post.title}</Typography>
-					<Typography gutterBottom variant="h6" color="textSecondary" style={{ fontFamily: 'Nanum Barun Gothic', fontWeight: '100', fontStyle: "normal", fontSize: '18px' }} component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
+					<Typography variant="h3" component="h2" style={{ fontWeight: '100', fontStyle: "normal", margin: '20px 0', fontSize: '45px' }}>🎧 {post.title}</Typography>
+					<Typography gutterBottom variant="h6" color="textSecondary" style={{ fontWeight: '100', fontStyle: "normal", fontSize: '18px' }} component="h2">{post.tags.map((tag) => `#${tag} `)}</Typography>
 					<Typography gutterBottom variant="body1" component="p" style={{ fontFamily: 'gill sans' }}>{post.message}</Typography>
 					<Typography variant="h6" style={{ fontFamily: 'gill sans' }}>Created by: {post.name}</Typography>
 					<Typography variant="body1">{moment(post.createdAt).fromNow()}</Typography>

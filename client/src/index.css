@@ -5,12 +5,3 @@ body {
   background-size: cover;
 }
 
-@font-face {
-  font-family: 'Nanum Barun Gothic';
-  font-style: normal;
-  font-weight: 100;
-  src: url('./fonts/NanumBarunGothic-WEB/NanumBarunGothic.otf')
-      format('truetype'),
-    url('./fonts/NanumBarunGothic-WEB/NanumBarunGothic.woff2') format('woft2'),
-    url('./fonts/NanumBarunGothic-WEB/NanumBarunGothic.woff') format('woff');
-}

@@ -48,7 +48,6 @@ export default makeStyles((theme) => ({
   title: {
     fontSize: '18px',
     fontWeight: '100',
-    fontFamily: 'Nanum Barun Gothic',
     fontStyle: 'normal'
   },
   name: {

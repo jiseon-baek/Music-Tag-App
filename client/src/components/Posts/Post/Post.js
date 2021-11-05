@@ -42,7 +42,7 @@ const Post = ({ post, setCurrentId }) => {
 				<Card className={classes.card}>
 					<CardMedia className={classes.media} image={post.selectedFile} onClick={openLink} title={post.title} />
 					<div className={classes.overlay}>
-						<Typography variant="h6" style={{ fontFamily: 'Nanum Barun Gothic', fontWeight: '100', fontStyle: "normal" }}>{post.name}</Typography>
+						<Typography variant="h6" style={{ fontWeight: '100', fontStyle: "normal" }}>{post.name}</Typography>
 						<Typography variant="body2">{moment(post.createdAt).fromNow()}</Typography>
 					</div>
 					{(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
@@ -56,7 +56,7 @@ const Post = ({ post, setCurrentId }) => {
 						</div>
 					)}
 					<div className={classes.details}>
-						<Typography variant="body2" color="textSecondary" style={{ fontFamily: 'Nanum Barun Gothic', fontWeight: '100', fontStyle: "normal", fontSize: "13.5px" }}>{post.tags.map((tag) => `#️${tag} `)}</Typography>
+						<Typography variant="body2" color="textSecondary" style={{ fontWeight: '100', fontStyle: "normal", fontSize: "13.5px" }}>{post.tags.map((tag) => `#️${tag} `)}</Typography>
 					</div>
 					<Typography className={classes.title} variant="h5" gutterBottom>{post.title}</Typography>
 					<CardContent>
