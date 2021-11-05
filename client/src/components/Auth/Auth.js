@@ -37,11 +37,11 @@ const Auth = () => {
         e.preventDefault();
 
         if (isSignup) {
-            //dispatch(signup(formData, history));
-            callSignup();
+            dispatch(signup(formData, history));
+            ;
         } else {
-            //dispatch(signin(formData, history));
-            callSignin();
+            dispatch(signin(formData, history));
+            
         }
     }
 
