@@ -25,7 +25,7 @@ const Auth = () => {
 
     const callSignup = useCallback(() => {
         dispatch(signup(formData, history));
-    }, [formData, history]);
+    }, [formData, history]); //formData와 history가 변경될 때 렌더링한다.
     const callSignin = useCallback(() => {
         dispatch(signin(formData, history));
     }, [formData, history]);

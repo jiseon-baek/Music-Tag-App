@@ -7,7 +7,7 @@ const postSchema = mongoose.Schema({
 	message: String,
 	name: String, 
 	creator: String,
-	tags: [String],
+	tags: [String], //태그는 배열로 묶는다 
 	selectedFile: String,
 	likes: {
 		type: [String],

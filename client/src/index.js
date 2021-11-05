@@ -13,6 +13,7 @@ import './index.css';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
+
 Sentry.init({
   dsn: 'https://e2dae39cc9f04d0a9e7495b72f099410@o1003790.ingest.sentry.io/5964402',
   integrations: [new Integrations.BrowserTracing()],
