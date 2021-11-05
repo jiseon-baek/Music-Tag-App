@@ -47,8 +47,6 @@ export default makeStyles((theme) => ({
     
   },
   typo2: {
-    fontWeight: '100',
-    
     fontStyle: 'normal',
     fontSize: 17,
     padding: 10,

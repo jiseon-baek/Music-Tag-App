@@ -56,7 +56,7 @@ const Post = ({ post, setCurrentId }) => {
 						</div>
 					)}
 					<div className={classes.details}>
-						<Typography variant="body2" color="textSecondary" style={{ fontWeight: '100', fontStyle: "normal", fontSize: "13.5px" }}>{post.tags.map((tag) => `#️${tag} `)}</Typography>
+						<Typography variant="body2" color="textSecondary" style={{ fonfFamily:'monospace', fontStyle: "normal", fontSize: "13.5px" }}>{post.tags.map((tag) => `#️${tag} `)}</Typography>
 					</div>
 					<Typography className={classes.title} variant="h5" gutterBottom>{post.title}</Typography>
 					<CardContent>
