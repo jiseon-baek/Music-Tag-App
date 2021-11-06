@@ -12,8 +12,8 @@ dotenv.config();
 
 
 
-app.use(bodyParser.json({ limit: "20mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "20mb", extended: true }));
+app.use(app.json({ limit: "20mb", extended: true }));
+app.use(app.urlencoded({ limit: "20mb", extended: true }));
 app.use(cors());
 
 app.use('/posts', postRoutes);
