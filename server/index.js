@@ -1,5 +1,4 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -33,3 +32,4 @@ mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnified
 	.catch((error) =>  console.log(error.message));
 
 mongoose.set('useFindAndModify', false);
+

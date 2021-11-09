@@ -4,6 +4,14 @@ import PostMessage from '../models/postMessage.js';
 
 const router = express.Router();
 
+const { ObjectId } = mongoose.Types;
+
+export const checkObjectId = (req, res, next) => {
+	const { id: _id } = req.params;
+	if(!ObjectId.isValid(id)) return res.status(404).send(`Id가 일치하지 않습니다.`);
+	return next();
+}
+
 export const getPost = async (req, res) => { 
 	const { id } = req.params;
     
@@ -24,7 +32,6 @@ export const getPosts = async (req, res) => {
 		const LIMIT = 6;
 		const startIndex = (Number(page) - 1) * LIMIT;
 		const total = await PostMessage.countDocuments({});
-
 		const posts = await PostMessage.find().sort({ _id: -1 }).limit(LIMIT).skip(startIndex);
 
 		res.status(200).json({ data: posts, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT)} );
@@ -63,9 +70,10 @@ export const updatePost = async(req, res) => {
 	const { id: _id } = req.params;
 	const post = req.body;
 
-	if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`Id와 일치하는 Post가 없습니다.`);
+	//if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`Id와 일치하는 Post가 없습니다.`);
+	checkObjectId();
 
-	const updatedPost = await PostMessage.findByIdAndUpdate(_id, { ...post, _id }, { new: true });
+	const updatedPost = await PostMessage.findByIdAndUpdate(_id, { ...post, _id }, { new: true }); //세가지 파라미터를 넣어주어야 한다. findByIdAndUpdate(id, 업데이트 내용, 업데이트의 옵션)
 	
 	res.json(updatedPost);
 }
@@ -73,8 +81,8 @@ export const updatePost = async(req, res) => {
 export const deletePost = async (req, res) => {
 	const { id } = req.params;
     
-	if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
-    
+	//if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+	checkObjectId();
 	await PostMessage.findByIdAndRemove(id);
     
 	res.json({ message: "Post deleted successfully." });
@@ -86,7 +94,8 @@ export const likePost = async (req, res) => {
 
 	if(!req.userId) return res.json({ message: 'Unauthenticated' });
 
-	if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+	//if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+	checkObjectId();
 
 	const post = await PostMessage.findById(id);
 
