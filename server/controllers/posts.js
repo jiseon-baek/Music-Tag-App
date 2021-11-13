@@ -75,7 +75,7 @@ export const updatePost = async(req, res) => {
 
 	const updatedPost = await PostMessage.findByIdAndUpdate(_id, { ...post, _id }, { new: true }); //세가지 파라미터를 넣어주어야 한다. findByIdAndUpdate(id, 업데이트 내용, 업데이트의 옵션)
 	
-	res.json(updatedPost);
+	res.json({ message: "Post updated successfully"});
 }
 
 export const deletePost = async (req, res) => {
