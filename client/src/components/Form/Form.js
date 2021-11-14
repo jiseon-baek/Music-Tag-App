@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper, Divider } from '@material-ui/core';
-import FireBase from '@types/react-file-base64';
+import FireBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
