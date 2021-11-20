@@ -67,4 +67,17 @@ export default makeStyles((theme) => ({
   actionDiv: {
     textAlign: 'center',
   },
+  noPost : {
+    backgroundColor: 'white',
+    color: 'purple',
+    fontSize: '24px',
+    fontWeight: 'bold',
+    width: '20%',
+    margin: '20% auto',
+    textAlign: 'center',
+    padding: '10px',
+    borderRadius: '8px'
+
+
+  }
 }));
